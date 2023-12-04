@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .nav {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #0077b6, #0096c7, #00b4d8, #48cae4, #90e0ef, #ade8f4, #caf0f8, #ffddd2, #ffb4a2, #ff9292, #ff7171, #ff6161);
+    text-align: center;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+    background-image: url('assets/bg.png');
+
+}
+.nav a {
+    color: teal;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.nav a:hover {
+    background-color: teal;
+}
+
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            /* align-items: center; */
+            justify-content: center;
+            height: 100vh;
+            background-color: teal;
+        }
+
+        .container {
+            /* max-width: 800px; */
+            /* display: flex;
+            justify-content: space-between;
+            align-items: center; */
+            padding: 20px;
+            /* padding-top: 300px; */
+            /* background-color: #ffffff; */
+            /* border-radius: 8px; */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: teal;
+        }
+
+
+        .text {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+          padding: 20px;
+          color:white;
+          padding-top: 0px;
+            max-width: 50%;
+            max-height: 530px; /* Allow the text to fill the container's height */
+            overflow-y: auto; /* Enable vertical scrollbar if needed */
+        }
+
+        .image {
+            max-width: 50%;
+            height: auto;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: teal;
+        }
+        .header {
+            /* background-color: #333; */
+            color: teal;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color:teal;
+            color: teal;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .image-with-caption {
+        text-align: justify; /* Center-align image and caption */
+        color: #fff; /* Adjust the font color as needed */
+        margin-top: 2px; /* Center the container */
+
+    }
+
+        .image-caption {
+        text-align: justify; /* Center-align the caption */
+        margin-top: 4px; /* Spacing between the image and caption */
+        color: #fff; /* Adjust the font color as needed */
+        font-size: 1em; /* Adjust the font size as needed */
+    }
+
+</style>
+
+</head>
+<body>
+
+
+    <div class="header">
+        <h1>Climate Chronicles</h1>
+    </div>
+
+    <div class="nav">
+
+        <a href="index.html">Home</a>
+        <a href="temperature.html">Temperature Anomalies </a>
+        <a href="carbon_emissions.html">Carbon Emissions</a>
+        <a href="sealevel.html">Sea levels</a>
+    </div>
+      
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      
+
+
+    <div class="container">
+        <div class="text">
+          <h1>Comprehensive Visualization of Sea Level Trends Across 24 Oceans from 1992 to 2022</h1>
+          <p>
+            For the task of these visualizations, which is to present the sea level data and identify the outliers among the oceans, we attempted to apply a small multiple composed of an area between lines chart for each ocean, with each plot showing the maximum, minimum, and average sea level of the corresponding ocean as a timeline from 1992 to 2022. In Figure 3 a and (b-f), the visualizations have been crafted using the conventions from Chapters 2, 3, 7, and 10 on data and task abstraction. First, the mark of this visualization is a point, indicating the sea level value of each year in millimeters. Within this plot, each point is connected to form a line, and individual points are not separately marked to show the natural flow of changes through the shape of the lines. Each line is an attribute for maximum, minimum, and average sea level values, with color hue, red, blue, and green for max, min, and average respectively, used as the identity channel to distinguish between the attributes. The aligned position of each point, which forms the line, is used as the magnitude channel to show the degree of the values. Another mark used in this plot is the area. The yellow area between the maximum and minimum lines represents the differences between the maximum and minimum sea levels of each year over time. It allows observation of both how much the sea level changes within a year and whether this difference changes along with the sea level rise over time. An area chart in small multiples, such as Figure 3b, reveals the trends in maximum, minimum, and average sea levels for a specific ocean through each line. Additionally, the slope indicates the speed of sea level rise, and the area reflects the changes in the difference between maximum and minimum throughout years. Users can discover from the presented information that sea level rise does not uniformly happen in the entire ocean. Specifically, steeper slopes denote oceans undergoing rapid changes, while minimal slope changes suggest oceans less affected by sea level rise. Among these, a few oceans with the most significant changes in slope may be identified as outliers within the overall dataset. We considered small multiples to be the most suitable approach for performing our task related to sea level rise. This is because all plots are consistent, employing the same encoding. In other words, although each plot contains different information about each ocean, using the same mark and channel allows for each comparison between plots, making it easier to discover plots where changes are more pronounced.To prevent the complexity that may arise from placing many subplots within small multiples, we aimed to ensure that each subplot conveys information accurately while maintaining simplicity. Initially, we created small multiples using paired bar plots. However, since the length of the bars extends in both negative and positive directions relative to the baseline, 0, when the maximum and minimum have the different signs, the overall shape elongates on both sides. Also, in cases where they have the same sign, overlapping regions may occur, leading to potential misinterpretation of the significance of such visible points, which were not intended. Therefore, we decided to switch to a line-area chart using a point mark, position channel, and area mark instead of a line mark and length channel for the bar plots. These changes provide a more concise and accurate representation of sea level height information and the associated trends in sea level rise, connecting them with lines. This allows us to successfully accomplish the task related to sea level rise and compare slopes to identify outliers more effectively.
+          </p>
+      </div>
+      &nbsp;
+
+<div class="container">
+    <div class="image-with-caption">
+        <img src="sea_level_images/qt_api_test.svg" alt="Description of the image" style="width: 600px; height: 500px;">
+        <div class="image-caption">
+            <p>Figure [3]a. Small multiples of line and area charts for presenting sea level rise over time.This visualization represents the trend of sea level rise for each ocean over time using sea level rise data [3] observed from 24 different oceans from 1992 to 2022. This allows for the immediate observation that sea level rise does not occur at the same rate in all oceans, and that the speed or degree of rise varies depending on the location. Additionally, these can be used to identify oceans that are rising faster (such as the Indian Ocean and the Tropics, with rising max and min sea levels more rapidly than many others) and by how much, and can be used to inform people that these rising ocean levels may impact nearby continents.</p>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+
+
+    <!-- <img src="sea_level_images/qt_api_test.svg" alt="Description of the image", style="width: 700px; height: 500px;">    
+    <div class="image-caption">
+        <p>This is a detailed description of the first image. It provides context and relevant information about what the image represents and why it's significant.</p>
+    </div>
+    </div> -->
+    
+
+
+
+
+
+
+
+    <div class="description">
+        <h1>Outlier Images Examples</h1>        
+    </div>
+
+
+    <div class="container">
+        <div class="text">
+          <h1>Critical Outliers in Sea Level Rise</h1>
+          <p>
+            In our comprehensive dataset covering 24 oceanic regions from 1992 to 2022, five regions—Pacific, Atlantic, Niño 3.4, Tropics, and Indian Oceans—emerge as critical outliers. These areas exhibit a significant and sustained escalation in sea level measurements across minimum, average, and maximum values, diverging from the less dramatic trends seen in other areas. Such anomalous patterns indicate an atypical rate of change, likely driven by a complex interplay of climatic factors such as accelerated glacial melting, oceanic thermal expansion due to temperature rise, and alterations in ocean currents and atmospheric pressure differentials, particularly pronounced in these regions. These divergent trends not only signify heightened vulnerability to rising sea levels but also necessitate urgent, region-specific research for a deeper understanding of the involved dynamics and for informing robust climate resilience measures.
+          </p>
+      </div>
+      &nbsp;
+      <div class="container">
+        <div class="image-with-caption">
+            <div class="image-caption">
+                <p>Figure [3]b</p>
+            </div>
+            <img src="sea_level_images/Atlantic_Ocean.svg" alt="Description of the image", style="width: 600px; height: 400px;">    
+            <div class="image-caption">
+                <p>Figure [3](b,c,d,e,f).Each graph captures a concerning trend of accelerated sea level rise from 1992 to 2022, with the Pacific, Atlantic, Niño 3.4, Tropics, and Indian Oceans showcasing significantly steeper inclines in all sea level metrics. These regions' data starkly contrast with the global average, underscoring a pressing need for intensified scrutiny and adaptive strategies to mitigate the impact of rising sea levels in these critical areas.</p>
+            </div>
+        </div>
+    </div>
+        </div>
+    
+
+
+
+
+    <!-- <img src="sea_level_images/Atlantic_Ocean.svg" alt="Description of the image", style="width: 700px; height: 400px;">     -->
+
+</div>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="text">
+      <h1></h1>
+      
+    </div>
+    &nbsp;
+
+        <div class="image-with-caption">
+            <p>Figure [3]c</p>
+        </div>
+    <img src="sea_level_images/Indian_Ocean.svg" alt="Description of the image", style="width: 600px; height: 400px;">    
+
+    <div class="image-with-caption">
+        <p>Figure [3]d</p>
+    </div>
+
+    <img src="sea_level_images/Nino_34.svg" alt="Description of the image", style="width: 600px; height: 400px;">    
+
+</div>
+
+
+
+<div class="container">
+    <div class="text">
+      <h1></h1>
+      
+    </div>
+    &nbsp;
+
+    <div class="image-with-caption">
+        <p>Figure [3]e</p>
+    </div>
+
+    <img src="sea_level_images/Pacific_Ocean.svg" alt="Description of the image", style="width: 600px; height: 400px;">    
+
+    <div class="image-with-caption">
+        <p>Figure [3]f</p>
+    </div>
+
+    <img src="sea_level_images/Tropics.svg" alt="Description of the image", style="width: 600px; height: 400px;">    
+
+</div>
+
+
+
+
+
+
+    <script>
+        // Apply panzoom to all img tags
+        document.querySelectorAll('img').forEach(img => {
+            panzoom(img, {
+                maxZoom: 4,
+                contain: 'outside'
+            });
+        });
+    </script>
+
+</body>
+</html>
