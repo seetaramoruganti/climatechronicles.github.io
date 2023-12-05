@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Climate Chronicles</title>
     <style>
@@ -9,12 +10,14 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         .header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
         }
+
         /* .nav {
             padding: 0;
             margin: 0;
@@ -31,27 +34,31 @@
             color: black;
         } */
         .nav {
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(to right, #0077b6, #0096c7, #00b4d8, #48cae4, #90e0ef, #ade8f4, #caf0f8, #ffddd2, #ffb4a2, #ff9292, #ff7171, #ff6161);
-    text-align: center;
-    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
-    background-image: url('assets/bg.png');
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(to right, #0077b6, #0096c7, #00b4d8, #48cae4, #90e0ef, #ade8f4, #caf0f8, #ffddd2, #ffb4a2, #ff9292, #ff7171, #ff6161);
+            text-align: center;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+            background-image: url('assets/bg.png');
 
-}
-.nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-.nav a:hover {
-    background-color: rgba(255,255,255,0.3);
-}
+        }
+
+        .nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
         .content {
             padding: 20px;
         }
+
         .footer {
             background-color: #333;
             color: white;
@@ -63,6 +70,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1>Climate Chronicles</h1>
@@ -80,13 +88,26 @@
     </div>
 
     <div class="content">
-        <!-- Content goes here -->
+        <h1 class="references-title">Future Works</h1>
+    <div style="font-size: 25px;">
+        <ul class="references-list">
+            <li>Will try to implement incorperate zoom, pan, detail - on - demand features to temperature anomaly
+                animation <a href="temperature.html">Figure 1.</a></li>
+            <li><a href="temperature.html">Figure 1.</a> Adding a drop down to choose particular year data to visualize
+                temperature anomaly increases redability and User experience</li>
+            <li><a href="temperature.html">Figure 1.</a>Selecting a particular country and showing a pop up window with
+                line graph to show anomaly trends </li>
+            <li>Finding more ways to visualize correlation among various climate affecting metrics such as temperatures,
+                carbon emissions, sea level changes, sea ice levels</li>
 
 
+        </ul>
+    </div>
     </div>
 
     <div class="footer">
-        <p>© 2023 Climate Chronicles. All rights reserved.</p>
+        <p> © 2023 Climate Chronicles. All rights reserved.</p>
     </div>
 </body>
+
 </html>
